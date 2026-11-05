@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shivaraj Jadhav — Video & Photo Editor Portfolio</title>
+    <meta name="description" content="Official portfolio of Shivaraj Jadhav, professional video editor and photo retouching specialist featuring cinematic video reels, before-and-after photo retouching, and custom creative work." />
+    <meta property="og:title" content="Shivaraj Jadhav — Video & Photo Editor Portfolio" />
+    <meta property="og:description" content="Official portfolio of Shivaraj Jadhav, professional video editor and photo retouching specialist featuring cinematic video reels, before-and-after photo retouching, and custom creative work." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('sj_portfolio_theme');
+          var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'light' || (!savedTheme && !systemDark)) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#09090b] text-[#f4f4f5] dark:bg-[#09090b] dark:text-[#f4f4f5] light:bg-[#f8fafc] light:text-[#09090b] antialiased transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

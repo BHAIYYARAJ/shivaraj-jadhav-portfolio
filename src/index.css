@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, .font-heading {
+    font-family: 'Syne', 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Text stroke utility for artistic headlines */
+.text-stroke-orange {
+  -webkit-text-stroke: 1px rgba(249, 115, 22, 0.4);
+}
+
+/* Perspective utilities for 3D card tilts */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Glowing text selection */
+::selection {
+  background-color: #ff5722;
+  color: #ffffff;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor {
+    cursor: default;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   LIGHT MODE SURFACE & TYPOGRAPHY SYSTEM
+   Seamless, high-contrast, editorial styling when html has .light class
+   ========================================================================== */
+
+html.light,
+html.light body,
+html.light div.min-h-screen,
+html.light [class*="bg-[#09090b]"],
+html.light [class*="bg-[#08080a]"],
+html.light main {
+  background-color: #f8fafc !important;
+  color: #09090b !important;
+}
+
+html.light header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+html.light header a {
+  color: #334155 !important;
+}
+
+html.light header a:hover {
+  color: #ea580c !important;
+}
+
+html.light header a span.font-heading {
+  color: #09090b !important;
+}
+
+html.light section#home,
+html.light section#services,
+html.light section#video-portfolio {
+  background-color: #f8fafc !important;
+}
+
+html.light section#about,
+html.light section#photo-portfolio,
+html.light section#contact {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light footer {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+/* Card, drawer and container surfaces in light mode */
+html.light .bg-zinc-950,
+html.light .bg-zinc-950\/95,
+html.light .bg-zinc-950\/90,
+html.light .bg-zinc-950\/80,
+html.light .bg-zinc-950\/70,
+html.light .bg-zinc-950\/60,
+html.light .bg-zinc-900,
+html.light .bg-zinc-900\/95,
+html.light .bg-zinc-900\/90,
+html.light .bg-zinc-900\/80,
+html.light .bg-zinc-900\/70,
+html.light .bg-zinc-900\/60,
+html.light .bg-zinc-900\/40,
+html.light [class*="bg-zinc-950/"],
+html.light [class*="bg-zinc-900/"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile navigation dropdown menu in light mode */
+html.light header .md\:hidden {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+html.light header .md\:hidden a {
+  color: #334155 !important;
+}
+
+html.light header .md\:hidden a:hover {
+  color: #ea580c !important;
+  background-color: #f1f5f9 !important;
+}
+
+
+
+/* Text colors in light mode */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light .text-white {
+  color: #09090b !important;
+}
+
+html.light p.text-zinc-300,
+html.light .text-zinc-200,
+html.light .text-zinc-300 {
+  color: #1e293b !important;
+}
+
+html.light p.text-zinc-400,
+html.light span.text-zinc-400,
+html.light .text-zinc-400 {
+  color: #475569 !important;
+}
+
+html.light .text-zinc-500 {
+  color: #64748b !important;
+}
+
+/* Borders in light mode */
+html.light .border-zinc-800,
+html.light .border-zinc-800\/80,
+html.light .border-zinc-800\/90,
+html.light .border-zinc-800\/60,
+html.light .border-zinc-900 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Form inputs & controls in light mode */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #09090b !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Preserve bright white text inside vibrant colored buttons */
+html.light .bg-orange-600,
+html.light .bg-orange-500,
+html.light .bg-gradient-to-r,
+html.light [class*="from-orange-600"] {
+  color: #ffffff !important;
+}
+
+html.light .bg-orange-600 *,
+html.light .from-orange-600 * {
+  color: #ffffff !important;
+}
+
+/* Preserve bright white text inside dark overlays, video controls & image badges */
+html.light .bg-black,
+html.light .bg-black\/80,
+html.light .bg-black\/70,
+html.light .bg-black\/60,
+html.light [class*="bg-black/"],
+html.light [class*="bg-black/"] * {
+  color: #ffffff !important;
+}
+
+/* Soft ambient glow overlay on light mode */
+html.light .bg-orange-600\/15,
+html.light .bg-orange-500\/10 {
+  opacity: 0.5;
+}
+
